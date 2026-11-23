@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animal Emergency Centre | CPSN</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8fa;
+  color: #293b46;
+  line-height: 1.6;
+}
+header {
+  background: #174d59;
+  color: white;
+  padding: 22px 15px;
+  text-align: center;
+}
+header a { color: white; }
+main { max-width: 950px; margin: auto; padding: 18px; }
+h2, h3 { color: #174d59; }
+.intro {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.warning {
+  background: #fff0ed;
+  border: 2px solid #b32c26;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 18px 0;
+}
+.warning h2 { color: #a62828; margin-top: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 13px;
+}
+.animal {
+  background: white;
+  border: 1px solid #dce5e8;
+  border-radius: 10px;
+  padding: 20px 10px;
+  text-align: center;
+}
+.animal .emoji { font-size: 42px; }
+.animal h3 { margin: 5px 0; }
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 12px;
+}
+.topic {
+  background: white;
+  padding: 15px;
+  border-radius: 9px;
+  border: 1px solid #dce5e8;
+}
+.rural {
+  background: #e6f1f2;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+footer {
+  background: #174d59;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚨 Animal Emergency Centre</h1>
+<p>Canadian Pet Support Network</p>
+<a href="index.html">← Return to Homepage</a>
+</header>
+
+<main>
+
+<section class="warning">
+<h2>IMPORTANT: Veterinary care comes first</h2>
+<p>This resource provides educational first-aid information only. It does not replace veterinary diagnosis, treatment or professional advice.</p>
+<p>If an animal is struggling to breathe, unconscious, collapsing, bleeding severely, having repeated seizures or experiencing another life-threatening emergency, contact an emergency veterinarian immediately.</p>
+<p>Do not delay transport or professional care to complete this guide. If veterinary services are far away, telephone the nearest veterinary hospital for instructions while arranging transport.</p>
+</section>
+
+<section class="intro">
+<h2>How can we help?</h2>
+<p>Select the type of animal below to find species-specific emergency information. Dogs, cats, exotic animals and livestock have different medical needs. Never assume that instructions for one species are safe for another.</p>
+</section>
+
+<h2>Choose your animal</h2>
+
+<div class="grid">
+<div class="animal">
+<div class="emoji">🐶</div>
+<h3>Dogs</h3>
+<p>Canine emergencies</p>
+</div>
+<div class="animal">
+<div class="emoji">🐱</div>
+<h3>Cats</h3>
+<p>Feline emergencies</p>
+</div>
+<div class="animal">
+<div class="emoji">🐰</div>
+<h3>Small Mammals</h3>
+<p>Rabbits, guinea pigs, ferrets and more</p>
+</div>
+<div class="animal">
+<div class="emoji">🦜</div>
+<h3>Birds</h3>
+<p>Companion and exotic birds</p>
+</div>
+<div class="animal">
+<div class="emoji">🦎</div>
+<h3>Reptiles</h3>
+<p>Snakes, lizards and turtles</p>
+</div>
+<div class="animal">
+<div class="emoji">🐴</div>
+<h3>Horses</h3>
+<p>Equine emergencies</p>
+</div>
+<div class="animal">
+<div class="emoji">🐄</div>
+<h3>Cattle</h3>
+<p>Beef and dairy cattle</p>
+</div>
+<div class="animal">
+<div class="emoji">🐐</div>
+<h3>Sheep & Goats</h3>
+<p>Small ruminants</p>
+</div>
+<div class="animal">
+<div class="emoji">🐖</div>
+<h3>Pigs</h3>
+<p>Swine emergencies</p>
+</div>
+<div class="animal">
+<div class="emoji">🐔</div>
+<h3>Poultry</h3>
+<p>Chickens, ducks and turkeys</p>
+</div>
+</div>
+
+<h2>Emergency situations</h2>
+<p>Explore the emergency topics we are developing. Guidance will be tailored to the animal species.</p>
+
+<div class="topics">
+<div class="topic">🫁 <strong>Breathing difficulties</strong></div>
+<div class="topic">🩸 <strong>Bleeding and injuries</strong></div>
+<div class="topic">⚡ <strong>Seizures and collapse</strong></div>
+<div class="topic">☠️ <strong>Poisoning and toxins</strong></div>
+<div class="topic">🌡️ <strong>Heatstroke and hypothermia</strong></div>
+<div class="topic">🦴 <strong>Fractures and trauma</strong></div>
+<div class="topic">🤰 <strong>Pregnancy and birthing</strong></div>
+<div class="topic">🩺 <strong>Digestive emergencies</strong></div>
+</div>
+
+<section class="rural">
+<h2>🌾 No veterinarian nearby?</h2>
+<p>Living in a rural or remote community can make accessing emergency veterinary care difficult.</p>
+<ol>
+<li>Call the nearest veterinary hospital, even if it is far away.</li>
+<li>Explain the animal's symptoms and when they began.</li>
+<li>Follow professional instructions while arranging safe transportation.</li>
+<li>Prepare the animal's age, approximate weight, medications and possible exposure history.</li>
+<li>Do not give human medications or attempt invasive procedures without veterinary direction.</li>
+</ol>
+<p>Online information cannot replace a veterinary assessment.</p>
+</section>
+
+<section class="intro">
+<h2>Our commitment to animal safety</h2>
+<p>Emergency guides will be developed with species-specific veterinary references and reviewed by appropriately qualified veterinary professionals before being published as practical first-aid instructions.</p>
+<p>Each guide will identify its sources and last review date.</p>
+</section>
+
+</main>
+
+<footer>
+<strong>Canadian Pet Support Network</strong>
+<p>Making veterinary care more accessible for pets across Canada.</p>
+</footer>
+
+</body>
+</html>
