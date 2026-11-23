@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canadian Pet Support Network</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #263746;
+  background: #f5f8fa;
+  line-height: 1.6;
+}
+header {
+  background: #174d59;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+header h1 { margin: 0; font-size: 27px; }
+header p { margin: 8px 0 0; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px;
+  background: white;
+}
+nav a { color: #174d59; font-weight: bold; text-decoration: none; }
+main { max-width: 950px; margin: auto; padding: 18px; }
+.emergency {
+  background: #a62828;
+  color: white;
+  padding: 26px 18px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 12px 0 25px;
+}
+.emergency h2 { font-size: 27px; margin: 0 0 8px; }
+.emergency a {
+  display: inline-block;
+  background: white;
+  color: #a62828;
+  padding: 12px 22px;
+  margin-top: 10px;
+  border-radius: 7px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.section-title { color: #174d59; margin-top: 30px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 14px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dce5e8;
+}
+.card h3 { color: #174d59; margin-top: 0; }
+.card a { color: #176477; font-weight: bold; }
+.notice {
+  background: #fff3d9;
+  padding: 16px;
+  border-left: 5px solid #d99b25;
+  border-radius: 6px;
+}
+footer {
+  background: #174d59;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin-top: 35px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Canadian Pet Support Network</h1>
+<p>Making veterinary care more accessible for pets across Canada.</p>
+</header>
+
+<nav>
+<a href="#emergency">Emergency Help</a>
+<a href="#financial">Financial Assistance</a>
+<a href="#rescues">Rescues & Shelters</a>
+<a href="#resources">Pet Resources</a>
+</nav>
+
+<main>
+
+<section class="emergency" id="emergency">
+<h2>🚨 PET OR ANIMAL EMERGENCY?</h2>
+<p>Not near a veterinary clinic? Find practical first-aid guidance while arranging professional help.</p>
+<a href="emergency.html">START EMERGENCY GUIDE</a>
+</section>
+
+<h2 class="section-title">How can we help?</h2>
+
+<div class="cards">
+<section class="card" id="financial">
+<h3>❤️ Veterinary Financial Assistance</h3>
+<p>Explore Canadian programs that may help with veterinary expenses.</p>
+<a href="financial-assistance.html">Find assistance →</a>
+</section>
+
+<section class="card" id="rescues">
+<h3>🐾 Rescues & Shelters</h3>
+<p>Find animal rescues, shelters and surrender resources.</p>
+<a href="rescues.html">Explore directory →</a>
+</section>
+
+<section class="card" id="resources">
+<h3>📚 Pet Health & Safety</h3>
+<p>Learn about toxins, prevention, pet safety and emergency preparedness.</p>
+<a href="pet-resources.html">Explore resources →</a>
+</section>
+</div>
+
+<h2 class="section-title">Emergency resources for all animals</h2>
+
+<div class="cards">
+<div class="card"><h3>🐶 Dogs</h3><p>Dog-specific emergency first aid.</p></div>
+<div class="card"><h3>🐱 Cats</h3><p>Cat-specific emergency first aid.</p></div>
+<div class="card"><h3>🐰 Exotic Animals</h3><p>Small mammals, birds and reptiles.</p></div>
+<div class="card"><h3>🐴 Farm Animals</h3><p>Horses, cattle, sheep, goats and more.</p></div>
+</div>
+
+<h2 class="section-title">Important information</h2>
+<div class="notice">
+<strong>Emergency disclaimer:</strong> This website provides educational information only. It does not replace veterinary assessment, diagnosis or treatment. Always contact a veterinarian or emergency veterinary hospital as soon as possible. Do not delay emergency care to follow online instructions.
+</div>
+
+</main>
+
+<footer>
+<p>Canadian Pet Support Network</p>
+<p>Making veterinary care more accessible for pets across Canada.</p>
+</footer>
+
+</body>
+</html>
