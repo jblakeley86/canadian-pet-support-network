@@ -6,35 +6,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pet Financial Assistance | CPSN</title>
 
-  background: #f0f6f2;
+<style>
+* { box-sizing: border-box; }
 
-
-.rescue-first {
-  background: #fff4df;
-  border-left: 4px solid #d59b3b;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 18px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8f7;
+  color: #263b38;
+  line-height: 1.6;
 }
-  /* CPSN ORGANIZATION ELIGIBILITY DISPLAY */
+
+header {
+  background: #174d43;
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+main {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.intro, .province, .organization {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px #0000000c;
+}
+
+.province h2 { color: #174d43; }
+
+.organization {
+  border: 1px solid #e1e9e5;
+}
+
+.organization h3 { margin-top: 0; }
+
+.tag {
+  display: inline-block;
+  background: #e8f2ed;
+  color: #245b4d;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 3px;
+}
 
 .eligibility {
   background: #f0f6f2;
   border: 1px solid #d7e5dc;
   border-radius: 10px;
-  padding: 12px;
+  padding: 14px;
   margin: 14px 0;
 }
 
 .eligibility h4 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: #174d43;
 }
 
 .eligibility-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .eligibility-item {
@@ -53,89 +91,102 @@
 .rescue-first {
   background: #fff4df;
   border-left: 4px solid #d59b3b;
-  padding: 15px;
+  padding: 16px;
   border-radius: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
-  <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8f7;
-  color: #263b38;
-  line-height: 1.6;
+
+.verification {
+  font-size: 12px;
+  color: #687872;
+  margin-top: 12px;
 }
-header {
-  background: #174d43;
-  color: white;
-  padding: 35px 20px;
-  text-align: center;
-}
-header h1 { margin: 0 0 10px; }
-main { max-width: 950px; margin: 30px auto; padding: 0 16px; }
-.intro, .province, .organization {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 8px #0000000c;
-}
-.province h2 { color: #174d43; }
-.organization { border: 1px solid #e1e9e5; }
-.organization h3 { margin-top: 0; }
-.tag {
-  display: inline-block;
-  background: #e8f2ed;
-  color: #245b4d;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin: 3px;
-}
+
 a { color: #176b8a; }
+
 .coming { color: #777; }
+
 footer {
   text-align: center;
   padding: 25px;
   background: #174d43;
   color: white;
 }
+
+@media(max-width: 500px) {
+  .eligibility-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Pet Financial Assistance & Support</h1>
-  <p>Canadian Pet Support Network</p>
-  <p>Helping Canadians find accessible veterinary care and support for their pets.</p>
+<h1>Pet Financial Assistance & Support</h1>
+<p>Canadian Pet Support Network</p>
+<p>Making veterinary care more accessible for pets across Canada.</p>
 </header>
 
 <main>
+
 <section class="intro">
-  <h2>Find Help for Your Pet</h2>
-  <p>Explore organizations offering veterinary financial assistance,
-  affordable veterinary services, pet food support and other resources.</p>
-  <p><strong>Important:</strong> Funding, eligibility and application
-  availability vary. Contact each organization to confirm current details.</p>
+<h2>Find Help for Your Pet</h2>
+<p>Explore organizations offering veterinary financial assistance,
+affordable veterinary services, pet food support and other resources.</p>
+<p><strong>Important:</strong> Funding, eligibility and application
+availability vary. Contact each organization to confirm current details.</p>
 </section>
+
+<div class="rescue-first">
+<h3>🐾 Adopted your pet from a rescue?</h3>
+<p>Contact your adoption rescue first before applying for outside
+financial assistance. Your rescue may offer post-adoption veterinary
+support, emergency funding, payment assistance or referrals.</p>
+</div>
 
 <section class="province">
 <h2>Alberta</h2>
-<p>Our first provincial directory. Explore available support across Alberta.</p>
+<p>Explore available support across Alberta.</p>
+
+<!-- ORGANIZATION CARD TEMPLATE -->
+<!-- Each organization displays eligibility before visitors click. -->
 
 <div class="organization">
 <h3>National Pet Care Fund</h3>
 <span class="tag">Veterinary financial assistance</span>
 <p>Financial assistance for eligible pet owners facing veterinary expenses.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Canadian eligibility; confirm restrictions</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Financial eligibility assessment</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm with organization</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Eligible veterinary expenses</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Application and supporting documents</span></div>
+</div>
+</div>
 <a href="https://nationalpetcarefund.com/" target="_blank">Visit organization</a>
+<p class="verification">Confirm current eligibility and funding availability before applying.</p>
 </div>
 
 <div class="organization">
 <h3>Tails of Help</h3>
 <span class="tag">Veterinary financial assistance</span>
 <p>Assistance with essential veterinary care for eligible Alberta pets.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Alberta</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Financial eligibility requirements apply</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm with organization</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Eligible veterinary treatment</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Application and veterinary documentation</span></div>
+</div>
+</div>
 <a href="https://tailsofhelp.ca/" target="_blank">Visit organization</a>
+<p class="verification">Confirm current eligibility and funding availability.</p>
 </div>
 
 <div class="organization">
@@ -143,6 +194,16 @@ footer {
 <span class="tag">Pet support</span>
 <span class="tag">Affordable services</span>
 <p>Explore available programs and services for pet owners in Edmonton.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Edmonton area; confirm program restrictions</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Varies by program</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm by service</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Community support and available services</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Varies by program</span></div>
+</div>
+</div>
 <a href="https://www.edmontonhumanesociety.com/" target="_blank">Visit organization</a>
 </div>
 
@@ -151,6 +212,16 @@ footer {
 <span class="tag">Pet food assistance</span>
 <span class="tag">Community support</span>
 <p>Community programs supporting pets and families experiencing hardship.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Calgary area; confirm program coverage</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Varies by program</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm by program</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Pet food and community support</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
 <a href="https://parachutesforpets.com/" target="_blank">Visit organization</a>
 </div>
 
@@ -159,6 +230,16 @@ footer {
 <span class="tag">Animal welfare</span>
 <span class="tag">Community support</span>
 <p>Explore available animal welfare and community assistance programs.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Alberta; program dependent</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Varies by program</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Dogs and cats; confirm service</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Animal welfare and community programs</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
 <a href="https://aarcs.ca/" target="_blank">Visit organization</a>
 </div>
 
@@ -166,6 +247,16 @@ footer {
 <h3>Alberta Helping Animals Society</h3>
 <span class="tag">Veterinary assistance</span>
 <p>Explore assistance programs for animals in need.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Alberta; confirm coverage</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Contact to confirm</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Contact to confirm</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Veterinary assistance; confirm covered expenses</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
 <a href="https://www.ahas.ca/" target="_blank">Visit organization</a>
 </div>
 
@@ -174,6 +265,16 @@ footer {
 <span class="tag">Affordable veterinary services</span>
 <span class="tag">Pet food support</span>
 <p>Explore local pet support and assistance programs.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Central Alberta; confirm coverage</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Varies by program</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm by program</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Available community support</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
 <a href="https://www.cahumane.com/" target="_blank">Visit organization</a>
 </div>
 
@@ -182,6 +283,16 @@ footer {
 <span class="tag">Pet owner support</span>
 <span class="tag">Veterinary assistance</span>
 <p>Explore community programs and available assistance for Calgary pet owners.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Calgary area; program dependent</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Varies by program</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm by program</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Community programs and veterinary support</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
 <a href="https://www.calgaryhumane.ca/" target="_blank">Visit organization</a>
 </div>
 
@@ -189,8 +300,75 @@ footer {
 <h3>UCVM Community Care Clinic</h3>
 <span class="tag">Subsidized veterinary care</span>
 <p>Affordable veterinary care through community partnerships and eligibility requirements.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Calgary; confirm program coverage</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Eligibility requirements apply</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm with clinic</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Subsidized care; confirm available services</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact clinic</span></div>
+</div>
+</div>
 <a href="https://vet.ucalgary.ca/" target="_blank">Visit organization</a>
 </div>
+
+<!-- ADDITIONAL ORGANIZATIONS -->
+
+<div class="organization">
+<h3>Zoe's Animal Rescue</h3>
+<span class="tag">Rescue support</span>
+<span class="tag">Community assistance</span>
+<p>Contact the rescue about available assistance and community support programs.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Alberta; confirm service area</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Contact to confirm</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm by program</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Confirm available assistance</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact organization</span></div>
+</div>
+</div>
+<p class="verification">Organization contact details and current assistance programs require verification.</p>
+</div>
+
+<div class="organization">
+<h3>Calgary Pet Wellness & Spay/Neuter Clinic</h3>
+<span class="tag">Affordable veterinary services</span>
+<span class="tag">Spay and neuter</span>
+<p>Veterinary wellness and spay/neuter services. This is a low-cost care resource, not necessarily a financial grant program.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Calgary area</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Confirm whether income restrictions apply</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm with clinic</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Wellness and spay/neuter; confirm services</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Contact clinic for booking and requirements</span></div>
+</div>
+</div>
+<p class="verification">Contact details and current service information require verification.</p>
+</div>
+
+<div class="organization">
+<h3>Community Veterinary Outreach</h3>
+<span class="tag">Community veterinary care</span>
+<span class="tag">Preventive care</span>
+<p>Veterinary outreach for people experiencing homelessness or vulnerable housing situations in participating communities.</p>
+<div class="eligibility">
+<h4>Eligibility at a glance</h4>
+<div class="eligibility-grid">
+<div class="eligibility-item"><strong>Location</strong><span>Selected Canadian communities; confirm active locations</span></div>
+<div class="eligibility-item"><strong>Income</strong><span>Specific program eligibility applies</span></div>
+<div class="eligibility-item"><strong>Species</strong><span>Confirm with local program</span></div>
+<div class="eligibility-item"><strong>Services</strong><span>Preventive veterinary services; varies by location</span></div>
+<div class="eligibility-item"><strong>Application</strong><span>Referral requirements may apply</span></div>
+</div>
+</div>
+<p class="verification">Alberta and Calgary service availability must be confirmed before referral.</p>
+</div>
+
 </section>
 
 <section class="province">
