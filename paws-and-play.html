@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPSN Paws & Play — Prototype</title>
+<style>
+:root{--ink:#24332f;--muted:#64736e;--green:#276b55;--mint:#eaf4ef;--cream:#fbf8f1;--gold:#d59b3b;--line:#dce5df;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--green);color:white;padding:22px max(20px,calc((100% - 1080px)/2))}
+.brand{font-weight:800;letter-spacing:.03em;font-size:14px;opacity:.9}
+header h1{font-size:clamp(30px,5vw,48px);line-height:1.05;margin:10px 0}
+header p{max-width:680px;margin:0;color:#e5f0ea}
+main{max-width:1080px;margin:28px auto;padding:0 18px 56px}
+.notice{background:#fff5df;border:1px solid #ecd7a8;border-radius:14px;padding:14px 16px;margin-bottom:22px;font-size:14px}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 20px #253a3010}
+h2{font-size:21px;margin:0 0 6px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+.causes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cause{border:1px solid var(--line);background:white;border-radius:13px;padding:13px;text-align:left;cursor:pointer;color:var(--ink);min-height:112px}
+.cause:hover{border-color:var(--green)}
+.cause[aria-pressed=true]{border:2px solid var(--green);background:var(--mint);padding:12px}
+.cause strong{display:block;margin:5px 0}
+.cause small{display:block;color:var(--muted);line-height:1.35}
+.emoji{font-size:23px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pill{font-size:12px;border-radius:99px;background:var(--mint);color:var(--green);padding:5px 9px;font-weight:700}
+button{font:inherit}
+.primary{background:var(--green);color:white;border:0;border-radius:11px;padding:12px 17px;font-weight:700;cursor:pointer}
+.primary:disabled{opacity:.45;cursor:not-allowed}
+.secondary{background:white;color:var(--green);border:1px solid var(--green);border-radius:11px;padding:10px 14px;font-weight:700;cursor:pointer}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.gamebox{background:#f6faf7;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:17px}
+.question{font-weight:750;font-size:18px;margin:5px 0 12px}
+.answers{display:grid;gap:8px}
+.answer{border:1px solid var(--line);border-radius:10px;background:white;text-align:left;padding:11px 12px;cursor:pointer}
+.answer:disabled{cursor:default;opacity:.9}
+.answer.correct{border-color:#2d8b62;background:#eaf6ef}
+.answer.wrong{border-color:#bd6860;background:#fff0ee}
+.feedback{min-height:25px;color:var(--muted);font-size:14px;margin-top:9px}
+.stat{background:#f6faf7;border-radius:13px;padding:13px}
+.stat b{font-size:25px;display:block}
+.stat span{font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+.bar{height:9px;border-radius:20px;background:#e8eee9;overflow:hidden;margin:8px 0}
+.bar i{display:block;width:0;height:100%;background:var(--green)}
+footer{max-width:1080px;margin:auto;padding:0 18px 30px;color:var(--muted);font-size:12px}
+.hidden{display:none!important}
+.modal{position:fixed;inset:0;background:#10231dcc;display:grid;place-items:center;padding:18px}
+.modal>div{max-width:430px;background:white;border-radius:18px;padding:23px}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:6px 0 12px;font:inherit}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.causes{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.causes{grid-template-columns:1fr}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">CANADIAN PET SUPPORT NETWORK</div>
+  <h1>🐾 Paws &amp; Play</h1>
+  <p>Play a little. Help pets a lot. Choose an animal-welfare cause, enjoy a free game and help demonstrate the community support sponsors can fund.</p>
+</header>
+<main>
+  <div class="notice"><strong>Prototype preview:</strong> This page is a demonstration only. No sponsor is currently pledging funds, game completions are not yet verified by a server, and no donations are generated or distributed through this prototype.</div>
+  <div class="grid">
+    <section class="panel">
+      <div class="row"><h2>Choose where your play helps</h2><span class="pill">Free to play</span></div>
+      <p class="sub">Select one cause for this game session. Your selection is a preference only until a sponsor-funded campaign is active.</p>
+      <div class="causes" id="causes">
+        <button class="cause" aria-pressed="true" data-cause="Emergency veterinary assistance"><span class="emoji">🩺</span><strong>Emergency veterinary assistance</strong><small>Help pets whose families face urgent, unexpected care costs.</small></button>
+        <button class="cause" aria-pressed="false" data-cause="Spay and neuter access"><span class="emoji">🐱</span><strong>Spay &amp; neuter access</strong><small>Support prevention and more affordable sterilization services.</small></button>
+        <button class="cause" aria-pressed="false" data-cause="Participating animal rescues"><span class="emoji">🏡</span><strong>Participating animal rescues</strong><small>Help registered rescue organizations care for animals in need.</small></button>
+        <button class="cause" aria-pressed="false" data-cause="Senior and special-needs pets"><span class="emoji">💚</span><strong>Senior &amp; special-needs pets</strong><small>Support animals needing ongoing or specialized care.</small></button>
+      </div>
+      <div class="gamebox">
+        <div class="row"><h2>Pet Trivia</h2><span class="pill">Daily challenge demo</span></div>
+        <p class="sub">Answer a question to try the first Paws &amp; Play game.</p>
+        <div id="game">
+          <div class="question" id="question">Which identification method can help reunite a lost pet with its family?</div>
+          <div class="answers" id="answers">
+            <button class="answer">A microchip with up-to-date contact information</button>
+            <button class="answer">A coat colour description only</button>
+            <button class="answer">A social media username written on paper at home</button>
+          </div>
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+          <div class="actions"><button class="primary" id="next" disabled>Next question</button><button class="secondary" id="reset">Start over</button></div>
+        </div>
+      </div>
+    </section>
+    <aside class="panel">
+      <h2>Your impact preview</h2>
+      <p class="sub">A transparent view of the sponsor-funded model.</p>
+      <div class="stats">
+        <div class="stat"><b id="completed">0</b><span>Demo questions answered</span></div>
+        <div class="stat"><b>—</b><span>Sponsor funds available</span></div>
+      </div>
+      <div class="stat">
+        <span>Selected cause</span>
+        <strong id="selectedCause">Emergency veterinary assistance</strong>
+      </div>
+      <div style="margin-top:16px">
+        <div class="row"><strong>Campaign funding</strong><span class="pill">Not active yet</span></div>
+        <div class="bar"><i></i></div>
+        <p class="sub">A live funding meter will appear when a sponsor pledge is confirmed and connected to verified completion records.</p>
+      </div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+      <h2>Play as a guest</h2>
+      <p class="sub">No account, payment or donation is needed. Optional accounts for saving achievements will be added in a later release.</p>
+      <button class="secondary" id="account">Learn about optional accounts</button>
+      <p class="sub" style="margin-top:18px;margin-bottom:0">Sponsors will fund eligible causes under published terms. CPSN will report pledges, payments received and distributions separately.</p>
+    </aside>
+  </div>
+</main>
+<footer>Canadian Pet Support Network · Paws &amp; Play concept preview · Not a donation solicitation or active fundraising campaign.</footer>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div><h2 id="modalTitle">Optional player accounts</h2><p>Guest play will remain available. In a future release, players may create an optional account to save achievements, track participation and revisit favourite causes. Account registration is not available in this preview.</p><button class="primary" id="close">Got it</button></div>
+</div>
+<script>
+const causeButtons=[...document.querySelectorAll('.cause')];
+let selected='Emergency veterinary assistance';
+let answered=0, questionIndex=0;
+const questions=[
+ {q:'Which identification method can help reunite a lost pet with its family?',a:['A microchip with up-to-date contact information','A coat colour description only','A social media username written on paper at home'],correct:0,why:'Correct. A registered microchip with current contact details can help identify a pet and contact their family.'},
+ {q:'Which household item is unsafe for cats?',a:['Plain cooked chicken','Lilies','Fresh water'],correct:1,why:'Correct. Many lilies are highly toxic to cats. Even small exposures can be life-threatening.'},
+ {q:'What is the safest response if a dog may have eaten something toxic?',a:['Wait a few days','Induce vomiting at home in every case','Contact a veterinarian or animal poison service promptly'],correct:2,why:'Correct. The safest next step depends on the substance, timing and animal. Get veterinary guidance promptly.'}
+];
+function renderQuestion(){
+ const q=questions[questionIndex%questions.length];
+ document.getElementById('question').textContent=q.q;
+ const wrap=document.getElementById('answers');wrap.innerHTML='';
+ q.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=answer;b.addEventListener('click',()=>choose(i));wrap.appendChild(b)});
+ document.getElementById('feedback').textContent='';
+ document.getElementById('next').disabled=true;
+}
+function choose(i){
+ const q=questions[questionIndex%questions.length],buttons=[...document.querySelectorAll('.answer')];
+ if(buttons.some(b=>b.disabled))return;
+ buttons.forEach((b,n)=>{b.disabled=true;if(n===q.correct)b.classList.add('correct');else if(n===i)b.classList.add('wrong')});
+ const right=i===q.correct;
+ document.getElementById('feedback').textContent=(right?'✓ ':'Not quite. ')+q.why;
+ answered++;document.getElementById('completed').textContent=answered;
+ document.getElementById('next').disabled=false;
+}
+document.getElementById('next').addEventListener('click',()=>{questionIndex++;renderQuestion()});
+document.getElementById('reset').addEventListener('click',()=>{questionIndex=0;answered=0;document.getElementById('completed').textContent='0';renderQuestion()});
+causeButtons.forEach(btn=>btn.addEventListener('click',()=>{
+ selected=btn.dataset.cause;
+ causeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+ document.getElementById('selectedCause').textContent=selected;
+}));
+document.getElementById('account').addEventListener('click',()=>document.getElementById('modal').classList.remove('hidden'));
+document.getElementById('close').addEventListener('click',()=>document.getElementById('modal').classList.add('hidden'));
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')e.currentTarget.classList.add('hidden')});
+</script>
+</body>
+</html>
